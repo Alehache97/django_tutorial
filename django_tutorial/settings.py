@@ -26,7 +26,7 @@ SECRET_KEY = '9f0h)gozf$g%6igo8&767w1xro0adm+)msxe)!eic$!fhvynb8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.djangote.org']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'www.djangote.org']
 
 
 # Application definition
@@ -121,9 +121,16 @@ USE_TZ = True
 
 #STATIC_URL = '/static/'
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = '/home/debian/django_tutorial/staticfiles'
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "polls/static",
+]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
